@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://starcdn.xintiao100.com/starResources/libs/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript" src="https://starcdn.xintiao100.com/starResources/libs/jquery-3.1.1.min.js"></script>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <script type="text/javascript" src="./js/setFontSize.js"></script>
+    <title>广告案例</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            /*height: 100%;*/
+            background:#493a6d;
+            /*适配IphoneX*/
+            padding-top: constant(safe-area-inset-top);
+            /* 为导航栏+状态栏的高度 88px*/
+            padding-left: constant(safe-area-inset-left);
+            /*如果未竖屏时为0*/
+            padding-right: constant(safe-area-inset-right);
+            /*如果未竖屏时为0*/
+            padding-bottom: constant(safe-area-inset-bottom);
+            /*为底下圆弧的高度 34px*/
+        }
+
+        .container {
+            width: 100%;
+            /*height: 100%;*/
+            background: url(./img/h5_bg.png) no-repeat;
+            background-size: 100% 100%;
+            position: relative;
+        }
+
+        .container ul {
+            width: 100%;
+            /*height:100%;*/
+            height: 1.2rem;
+            line-height: 1.2rem;
+            display: flex;
+            -webkit-display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #2a2a2a;
+            text-align: center;
+            z-index: 999;
+        }
+
+        ul li {
+            list-style: none;
+            width: calc(100% / 4);
+            border-right: 1px solid #3b3e45;
+            box-sizing: border-box;
+            line-height: 1.2rem;
+            font-size: .3rem;
+            color: #fff;
+        }
+
+        /*.on {*/
+
+        /*width: calc(100% / 4);*/
+        /*line-height: .65rem;*/
+        /*background: #46c1e3;*/
+        /*position: relative;*/
+        /*-webkit-animation: fadeInLeft 0.3s linear forwards;*/
+        /*animation: fadeInLeft 0.3s linear forwards;*/
+        /*}*/
+
+        @-webkit-keyframes fadeInLeft {
+            from {
+                opacity: 0.5;
+                -webkit-transform: translate3d(-15%, 0, 0);
+                transform: translate3d(-15%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .pt-content {
+            width: 100%;
+            height:100%;
+        }
+
+        .pt-content .item {
+            display: none;
+            position: relative;
+        }
+
+        /*.pt-content  .item{*/
+        /*display: none;*/
+        /*-webkit-animation: contentFadeInLeft 1s forwards;*/
+        /*animation: contentFadeInLeft 1s forwards;*/
+        /*}*/
+        .pt-content .itemOn {
+            margin: 0 auto;
+            -webkit-animation: contentFadeInLeft 1s forwards;
+            animation: contentFadeInLeft 1s forwards;
+        }
+
+        .pt-content .item:nth-child(1) img {
+            width: 6.89rem;
+            height: 2.64rem;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .pt-content .item:nth-child(2) h2 {
+            width: 6rem;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .pt-content .item:nth-child(3) img {
+            width: 6.04rem;
+            margin: 0 auto;
+        }
+
+        @-webkit-keyframes contentFadeInLeft {
+            from {
+                opacity: 0;
+                -webkit-transform: translate3d(-50%, 0, 0);
+                transform: translate3d(-50%, 0, 0);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .parent_content {
+            width: 100%;
+            padding-top: 1.3rem;
+        }
+
+        .class_outer {
+            width: 6.89rem;
+            margin: 0.1rem auto;
+            position: relative;
+            overflow: hidden;
+            padding-top: 0.1rem;
+        }
+
+        .class_outer img {
+            width: 6.89rem;
+            height: 2.64rem;
+            border-radius: 0.1rem;
+        }
+
+        .class_cover {
+            width: 100%;
+            /*height: 2.64rem;*/
+            line-height: 0.5rem;
+            padding-left: 0.3rem;
+            background-color: rgba(0, 0, 0, .50);
+            color: #FFFFFF;
+            font-size: 0.26rem;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .pt-tab .yellow_bar {
+            width: calc(100% / 4);
+            border-bottom: 0.1rem solid #e8b423;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .parent_content div {
+            width: 100%;
+        }
+
+        .cq_alert, .cq_alert2, .cq_alert3, .cq_alert4,.cq_alert5,.cq_alert6,.cq_alert7{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 99;
+        }
+
+        .cq_alert, img, .cq_alert2 img, .cq_alert3 img, .cq_alert4 img ,.cq_alert5 img, .cq_alert6 img ,.cq_alert7 img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .back_btn {
+            width: 0.3px;
+            height: 0.3px;
+            background: pink;
+            position: absolute;
+            top: 0.01rem;
+            left: 0.01rem;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="pt-tab">
+        <li class="yellow_bar">美业</li>
+        <li>快消品</li>
+        <li>影视综艺</li>
+        <li>学习娱乐</li>
+    </ul>
+    <!--<span class="yellow_bar"></span>-->
+    <div class="pt-content">
+        <div class="item itemOn" style="display:block;margin:0 auto;width:100%;">
+            <div class="parent_content">
+                <div class="class_outer" onclick="clickChange(1)">
+                    <img src="./img/cq.png"/>
+                    <span class="class_cover">《新年美颜上上签》玛丽黛佳</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(2)">
+                    <img src="./img/qm.png"/>
+                    <span class="class_cover">《让宝宝变美的窍门装》玛丽黛佳</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(3)">
+                    <img src="./img/dt.png"/>
+                    <span class="class_cover">《你是哪种花样女神经》玛丽黛佳</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(4)">
+                    <img src="./img/mass.png"/>
+                    <span class="class_cover">《寻找梦幻AH小粉钻》熊猫</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(5)">
+                    <img src="./img/mass.png"/>
+                    <span class="class_cover">《备战情人节 送爱豆上榜首》熊猫</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(6)">
+                    <img src="./img/jj_gz.png"/>
+                    <span class="class_cover">《女王节福利 审阅清单领定制礼物》玛丽黛佳</span>
+                </div>
+                <div class="class_outer" onclick="clickChange(7)">
+                    <img src="./img/jj_gz.png"/>
+                    <span class="class_cover">《3月女装节 来找爱豆同款》蘑菇街</span>
+                </div>
+            </div>
+        </div>
+        <div class="item itemOn">
+            此页暂无内容
+        </div>
+        <div class="item itemOn">
+        </div>
+        <div class="item itemOn">
+        </div>
+
+    </div>
+    <!--alert1-->
+    <div class="cq_alert" onclick="toLocation(1)">
+        <img src="./img/alert1.png" alt="">
+    </div>
+    <div class="cq_alert2" onclick="toLocation(2)">
+        <img src="./img/alert2.png" alt="">
+    </div>
+    <div class="cq_alert3" onclick="toLocation(3)">
+        <img src="./img/alert3.png" alt="">
+        <div class="back_btn">back</div>
+    </div>
+    <div class="cq_alert4" onclick="toLocation(4)">
+        <img src="./img/alert5.png" alt="">
+    </div>
+    <div class="cq_alert5" onclick="toLocation(5)">
+        <img src="./img/alert4.jpg" alt="">
+    </div>
+    <div class="cq_alert6" onclick="toLocation(6)">
+        <img src="./img/mldj_gz.png" alt="">
+    </div>
+    <div class="cq_alert7" onclick="toLocation(7)">
+        <img src="./img/alert_mgj.png" alt="">
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    function clickChange(type) {
+        if (type == '1') {
+            $('.cq_alert').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+            $('.pt-content').css('display', 'none')
+        } else if (type == '2') {
+            $('.cq_alert2').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        } else if (type == '3') {
+            $('.cq_alert3').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        } else if (type == '4') {
+            $('.cq_alert4').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        } else if (type == '5') {
+            $('.cq_alert5').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        }else if (type == '6') {
+            $('.cq_alert6').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        }else if (type == '7') {
+            $('.cq_alert7').css('display', 'block');
+            $('.pt-tab').css('display', 'none');
+        }
+    }
+    function toLocation(type) {
+        if (type == 1) {
+            window.location.href = 'https://starcdn.xintiao100.com/ads/chouqian'
+        } else if (type == 2) {
+            window.location.href = 'https://starcdn.xintiao100.com/starResources/videos/ID/mldj_qmz.mp4'
+        } else if (type == 3) {
+            window.location.href = 'https://starcdn.xintiao100.com/ads/dati'
+        } else if (type == 4) {
+            window.location.href = 'https://starcdn.xintiao100.com/starResources/videos/ID/lookforXGS.mp4'
+        } else if (type == 5) {
+            window.location.href = 'https://starcdn.xintiao100.com/starResources/videos/ID/loveDay.mp4'
+        }else if (type == 6) {
+            window.location.href = 'https://starcdn.xintiao100.com/ads/adsGz'
+        }else if (type == 7) {
+            window.location.href = 'https://starcdn.xintiao100.com/ads/mogujie'
+        }
+    }
+    $(function () {
+
+        $('.pt-tab').on('click', 'li', function () {
+            var $this = $(this);
+            $index = $this.index();
+            console.log($index);
+            $this.addClass('yellow_bar').siblings().removeClass('yellow_bar');
+            $('.item').hide().eq($index).addClass('itemOn').show();
+        });
+
+        //首页点击进来，先获取链接中的参数，再获取到每个li的元素，然后给每个元素添加class类，以及动画效果
+        var index = getUrlParam('a');
+        var item = $('.pt-tab li:eq(' + index + ')')['0'];
+        console.log(item, '---');
+        $(item).addClass('yellow_bar').siblings().removeClass('yellow_bar');
+        $('.item').hide().eq(index).addClass('itemOn').show();
+
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+    })
+</script>
+</html>
